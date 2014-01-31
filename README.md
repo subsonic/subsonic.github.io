@@ -1,12 +1,14 @@
-# Haacked.com
+# SubSonic Project Documentation
 
-This is my blog. There are many like it, but this one is mine.
+This is a port of our old wiki at subsonicproject.com. It died a horrible death as Media Wiki is, evidently, wide open to spam attack... which I never knew (oddly).
 
-## Testing
+I've been trying to clean up the mess but it's filled up my server's hard drive and running queries is almost impossible. The backup for it is about 10G and moving it around is... very painful.
 
-[HTML::Proofer](https://github.com/gjtorikian/html-proofer) is set up to validate all links within the project.  You can run this locally to ensure that your changes are valid:
+Anyway, there's an archive of the site up here: http://web.archive.org/web/20130314061901/http://subsonic.wekeroad.com/ and if you'd like to help you can!
 
-```shell
-bundle install
-bundle exec rake test
-```
+## Helping
+
+First - fork this repo. Then head to the archive above and copy some pages - just drop them into the _posts directory as html files with Jekyll front-matter (see current pages).
+
+Then send me a pull request. I would be so very happy!
+
