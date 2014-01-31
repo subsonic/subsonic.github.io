@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "SubSonic: All Your Database Belong To Us!"
+date:   2014-01-31 11:06:02
+---
+
+![SubSonic 3](/images/front.png)
+
+## SubSonic Is...
+
+A Super High-fidelity Batman Utility Belt that works up your Data Access (using Linq in 3.0), throws in some much-needed utility functions, and generally speeds along your dev cycle
+
+## Our Focus
+
+is that you have better things to do with your time than worry about Data Access. It's a problem - we understand. But we're here to help with the addiction.
+
+## New to SubSonic?
+
+It's easy to get started. Learn more about what SubSonic can do for you, or read our starup tutorial on using SubSonic in your project. If you're a person who doesn't like frameworks - we have something just for you.
+
+## Download
+
+You can download SubSonic's latest from [our github repository](https://github.com/subsonic/SubSonic-3.0)

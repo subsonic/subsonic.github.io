@@ -1,0 +1,29 @@
+#
+# Blog Settings
+#
+author: Rob Conery
+description: Subsonic 3.0 Documentation Site
+url: http://subsonic.github.io
+title: 'Subsonic'
+subtitle: "A Super High-fidelity Batman Utility Belt that works up your Data Access (using Linq in 3.0), throws in some much-needed utility functions, and generally speeds along your dev cycle"
+gravatar_url: http://media.wekeroad.com/SubSonicSMall.png
+subscribe_rss: http://subsonic.github.io/atom.xml
+
+# Github repositories
+github_user: subsonic
+github_repo_url: https://github.com/subsonic/SubSonic-3.0/
+
+# Twitter
+twitter_user: robconery
+twitter_tweet_button: true
+
+#
+# Jekyll Settings
+#
+markdown: redcarpet
+redcarpet:
+  extensions: ["tables"]
+#permalink: /archive/:year/:month/:day/:title/
+paginate: 20
+paginate_path: "page/:num"
+category_dir: categories
