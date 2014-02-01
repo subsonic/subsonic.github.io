@@ -23,7 +23,5 @@ twitter_tweet_button: true
 markdown: redcarpet
 redcarpet:
   extensions: ["tables"]
-#permalink: /archive/:year/:month/:day/:title/
-paginate: 20
-paginate_path: "page/:num"
+permalink: pretty
 category_dir: categories
