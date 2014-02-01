@@ -1,0 +1,22 @@
+---
+layout: post
+title: "IsEven"
+---
+
+# IsEven
+
+
+
+<h2>Namespace</h2>
+
+ 
+  
+
+<h2>Summary== Determines if an integer is even  ==Example==string fileText=SubSonic.Sugar.Files.GetFileText("C:\\MyFile.txt");  ==Unit Test</h2>
+
+ 
+[Fact] public void IsEven_Should_Return_True_For_2_And_4() {     Assert.True(2.IsEven());     Assert.True(4.IsEven()); } [Fact] public void IsEven_Should_Return_False_For_1_And_3() {     Assert.False(1.IsEven());     Assert.False(3.IsEven()); }  
+
+<h2>Comments</h2>
+
+ SubSonic 3.0 implements this as an extension method - 2.x uses a static method on SubSonic.Sugar.Numeric.

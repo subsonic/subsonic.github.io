@@ -1,0 +1,8 @@
+---
+layout: post
+title: "Distinct"
+---
+
+# Distinct
+
+Distinct is used by appending the "Distinct()" method on a query:[Test] public void SqlQuery_when_setting_distinct_it_should_set_IsDistinct() {  SubSonic.SqlQuery query= new    Select(Product.SupplierIDColumn).From<Product>().Distinct();  Assert.IsTrue(query.IsDistinct); }  [Test] public void SqlQuery_should_handle_distinct() {  ProductCollection select = new    Select(Product.SupplierIDColumn).From<Product>().Distinct()   .ExecuteAsCollection<ProductCollection>();   Assert.AreEqual(29, select.Count);  }  [Test] public void SqlQuery_GetRecordCount_should_handle_distinct() {  int select = new Select(Product.SupplierIDColumn)   .From<Product>().Distinct()   .GetRecordCount();   Assert.AreEqual(29, select); }   Hate to say this, but I have seen this misstated MANY times.  The SubSonic SqlQuery object does NOT have a Distinct method in it. It NEVER has.  Even with the release of 3.x it does not have a Distinct method.  The old Query object did but not the SqlQuery object. Unless someone you work with wrote one.  Which is easy enough to do.  I have done that myself.  Download the latest source and you will see, the SqlQuery object does not have this functionality, there are many other short comings of the SqlQuery object that I won't get into, but if you know enough about it, you can write your own methods to overcome its faults.

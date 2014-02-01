@@ -1,0 +1,31 @@
+---
+layout: post
+title: "3.0 Templates"
+---
+
+# 3.0 Templates
+
+
+
+<h2>Summary</h2>
+
+ Working with our DAL templates is literally as simple as editing a single line (the database connection) and dropping the files into your project. Visual Studio then takes over and fires off the 
+.  
+
+<h2>ActiveRecord Templates</h2>
+
+ If you like 
+ then you'll like our templates. They're easy to use and tweak as you need to. You can watch 
+ method in the top of Settings.ttinclude, or by scrolling down to the Table and Column classes in the same template to see how the naming is handled.  To exclude tables, you can adjust the ExcludeTables array in Settings.ttinclude. It's all C# code so you can, literally, tweak everything as much as needed.  To regenerate your code, simply right-click and select "Run Custom Tool". Or it will run automatically when you change/add the file.  
+
+<h2>Linq Templates</h2>
+
+ If you like to monkey with code generation, or have fine control over what you're doing, 
+ is for you.  These templates were created by 
+ using the 
+ by Oleg Sych. Each function is separated out nicely and it's very simple to find the parts of the template that you might want to change.  
+
+<h2>Working With T4</h2>
+
+ If you want to tweak the templates, make sure you download the free 
+

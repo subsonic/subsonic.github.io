@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Top"
+---
+
+# Top
+
+Top works when appended to the SqlQuery at any point prior to the execution call:[Test] public void Exec_Select_Top_Ten() {  SubSonic.SqlQuery query = DB.Select().Top("10")   .From("Customers");   int records = query.ExecuteTypedList<Customer>().Count;  Assert.AreEqual(10, records); }  
+Note: This query will not work if you execute GetRecordCount

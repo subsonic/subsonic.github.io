@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Share"
+---
+
+# Share
+
+! look like a real, functional site. Given that - you're free to share your work with others.  It would be groovy if we could just past the code straight into the wiki page, but we can't as the page will grow too long. Instead you can upload your file and share it with others.  
+
+<h2>How Can I Share My Templates? </h2>
+
+ You need to be a registered user of this site and a living, breathing person. To upload your file, 
+ and then embed it in this page as a link: [http://subsonicproject.com/docs/myfile.zip link text]   Be sure to tag your entry with [[Category:Code Generation]] and [[Category::T4]] so people can find your stuff.  
+
+<h2>Rob's Templates</h2>
+
+ My focus with these templates is simplicity and ease of maintenance. I want you to grok what's going on quickly! 
+   
+
+<h2>George Capnias's Templates</h2>
+
+ Load em up George!

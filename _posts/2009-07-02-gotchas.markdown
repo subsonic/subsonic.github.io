@@ -1,0 +1,34 @@
+---
+layout: post
+title: "Gotchas"
+---
+
+# Gotchas
+
+
+
+<h2>Summary== Every tool has its caveats, and SubSonic is no different. There are things that you can do with SubSonic that may come back to bite you, and here is a list of those things...  ==Closing Off Readers</h2>
+
+ This is by far the number one issue we have. We've opened up a lot of tools for you to use with SubSonic and we don't lock you into using "our way" - and with that comes a price.  One of the methods we expose in our Extensions is 
+{    //... }  
+
+<h2>Looping Query Execution</h2>
+
+ Sometimes you need to loop over a collection and save the objects to the database. Rather than do this one object at a time (opening and closing a connection), you can use SubSonic's built-in features, such as the 
+ and the 
+ to "AddMany" or "UpdateMany".  
+
+<h2>Querying In Batches</h2>
+
+ A lot of times you might need to query a database a number of times to load an object, and this can get costly if your web site (or remote app) is heavily used. To get around this, you can batch your sql statements into one blob and execute that with multiple result sets. You can do this with our 
+ tool.  Keep in mind that long-running queries will keep a connection open for a long time while the query executes - so use 
+ with care.  
+
+<h2>Indexing and Keys</h2>
+
+ Many, many people forget to put a primary key on their table - forgetting this can slow querying down tremendously so be sure to have your keys setup as needed.  With larger tables (especially with text columns), proper indexing can make a very, very big difference (sometimes a 90% improvement - or more!). If you're new to indexing there are many sources online as to how to do this (such as 
+.  SQL Server will also help you here - analyzing your tables and specific query, suggesting ways to improve performance.  
+
+<h2>ADO Provider Issues</h2>
+
+ Prior to 3.0's release, I built up a Perf tool that hammered on SubSonic with respect to SELECTS and pass-through queries and one thing I noticed is that ADO providers are not created equally.  Queries that execute against SQL Server in a few milliseconds took 10-20 times as long against MySQL. Simply put, MySQL's primary audience is not necessarily Windows users - so their ADO provider isn't quite as optimized as System.Data.SqlClient.  If you're finding that your "non-SQL Server" database isn't performing very well, you may want to check with your DB vendor for an updated provider.

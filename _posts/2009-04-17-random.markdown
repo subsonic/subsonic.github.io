@@ -1,0 +1,17 @@
+---
+layout: post
+title: "Random"
+---
+
+# Random
+
+
+
+<h2>Namespace</h2>
+
+ 
+  
+
+<h2>Summary== Generates a random number based on ranged parameters - 2 overloads.  ==Unit Test==[Fact] public void Random_With_10_High_Should_Produce_Number_LessThan10_100_Times() {     bool fail = true;     for (int i = 0; i <= 100; i++) {         var result = Numeric.Random(10);         fail = result > 10;         if (fail)             break;     }     Assert.False(fail); }  [Fact] public void Random_With_10_High_Should_Produce_Number_Between_10_And_100_100_Times() {     bool fail = true;     for (int i = 0; i <= 100; i++) {         var result = Numeric.Random(10,100);         fail = result < 10 || result > 100;         if (fail)             break;     }     Assert.False(fail); }  ==Comments</h2>
+
+ SubSonic 3.0 implements this as an extension method - 2.x uses a static method on SubSonic.Sugar.Numeric.

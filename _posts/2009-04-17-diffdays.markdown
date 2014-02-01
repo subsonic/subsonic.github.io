@@ -1,0 +1,22 @@
+---
+layout: post
+title: "DiffDays"
+---
+
+# DiffDays
+
+
+
+<h2>Namespace</h2>
+
+ 
+  
+
+<h2>Summary== Returns a double indicating the number of days between two dates (past is negative)  ==Example==var days=DateTime.Now.DiffDays(DateTime.AddDays(3));  ==Unit Test</h2>
+
+ 
+public void DiffDays_Should_Return_3_For_DateTimeNow_And_AddDays3() {     var today = DateTime.Now;     var then = DateTime.Now.AddDays(3);     var diff = today.DiffDays(then);     Assert.Equal(-3, diff); }  
+
+<h2>Comments</h2>
+
+ SubSonic 3.0 implements this as an extension on System.DateTime - 2.x uses a static method on SubSonic.Sugar.Dates.

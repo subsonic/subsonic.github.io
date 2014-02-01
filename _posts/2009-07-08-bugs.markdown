@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Bugs"
+---
+
+# Bugs
+
+
+
+<h2>Summary</h2>
+
+ If you find a bug and want to tell us about it, the best thing you can do is to create an issue for us 
+.  
+
+<h2>Creating an Issue== Please keep in mind that we won't know what you're talking about almost 90% of the time, and this isn't your fault :). We drop in to the issues list when we can, and our minds on coming off our day jobs, life at home - whatever. We need to understand your issue from the ground up.  The more information you can provide, the better. Before we do anything, we need to reproduce your bug, and then decide what to do with it. The sooner we do that, the sooner we can fix it.  You'll notice that there are some questions on the New Issue input, which are designed to lead you into giving us as much information as possible:What steps will reproduce the problem? 1. 2. 3.  What is the expected output? What do you see instead?  It may seem completely obvious to you at the time, but it won't be to us so please, we beg you, save us some round trips and give us everything you know!  ==Helping Us</h2>
+
+ If you feel brave you can always 
+.  If you're up to this, what would really help is to fill out the issue as completely as you can, and then 
+.

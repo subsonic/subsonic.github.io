@@ -1,0 +1,14 @@
+---
+layout: post
+title: "FAQ"
+---
+
+# FAQ
+
+{Incomplete}  
+
+<h2> Summary ==  Answers to some of the more common questions for new SubSonic users  === Why don't the t4 templates do their magic for me? =</h2>
+
+ If the templates don't run automatically you should just be able to right click on them and choose 'Run custom tool'. If that doesn't work it's probably because of one of the following:  * The first thing to check is whether you're using an Express version Visual Studio. If so t4 templates aren't supported and you're going to have to do some work. Have a look at 
+  stackoverflow question to see what you need to do.  * If you're not using Express then the next possible cause is that you're trying to run the templates inside a Website project rather than a Web Application Project and t4 templates won't work in a Website project. If this is the case then just add a Library project to your solution and drop the templates in there instead.  * Sometimes a broken Visual Studio installation will cause t4 integration to stop working.   
+  This is my first attempt to contribute to the docs, I'm not going to link it in till I've added more FAQs and got the hang of the formatting.

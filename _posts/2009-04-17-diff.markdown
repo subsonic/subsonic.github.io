@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Diff"
+---
+
+# Diff
+
+
+
+<h2>Namespace</h2>
+
+ 
+  
+
+<h2>Summary== Diffs two dates, returning a TimeSpan  ==Example==TimeSpan time=DateTime.Diff(DateTime.Now, DateTime.AddDays(3));  ==Unit Test</h2>
+
+ 
+public void Diff_Should_Return_3Day_Timespan_For_DateTimeNow_And_AddDays3() {     var today = DateTime.Now;     var then = DateTime.Now.AddDays(3);     var diff = today.Diff(then);     Assert.Equal(-3, diff.Days); }  
+
+<h2>Comments</h2>
+
+ SubSonic 3.0 implements this as an extension on System.DateTime - 2.x uses a static method on SubSonic.Sugar.Dates.

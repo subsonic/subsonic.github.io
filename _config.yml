@@ -11,7 +11,7 @@ subscribe_rss: http://subsonic.github.io/atom.xml
 
 # Github repositories
 github_user: subsonic
-github_repo_url: https://github.com/subsonic/SubSonic-3.0/
+github_repo_url: https://github.com/subsonic/subsonic.github.io/
 
 # Twitter
 twitter_user: robconery

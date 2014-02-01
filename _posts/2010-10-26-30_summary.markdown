@@ -1,0 +1,29 @@
+---
+layout: post
+title: "3.0 Summary"
+---
+
+# 3.0 Summary
+
+
+
+<h2>Summary==  SubSonic 3.0 is the latest version of SubSonic and was released in June of 2009. Work on SubSonic 3.0 lasted close to a year, and revolved mostly around supporting Language-integrated Query, also known as LINQ.  The focus of SubSonic 3.0 is to provide tools, not guidance or an overall mindset/approach. There are a number of things in SubSonic that allow you to move faster while applying whatever patterning floats your boat. We're not as complete as NHibernate, but you'll work faster with less concept count. We're not as deep as Linq to SQL, but you can use our stuff on most databases.  ==Linq</h2>
+
+ SubSonic 3.0 supports Linq with a core Expression Parser that turns System.Linq.Expressions into SQL. In addition, our 2.0 Query Tool (now called 
+ can use Lambda expressions to simplify some tasks.  All of the templates we use build on top of our core parsers and query tools, and you can 
+ of these quite easily.  
+
+<h2>Simple Query Tool</h2>
+
+ The 
+" method that will execute a query and load an object for you.  
+
+<h2>Utilities</h2>
+
+ SubSonic also comes with a number of utility methods expressed as Extension Methods. This is SubSonic's 
+ and has a number of things to save you time, including File IO, string methods, date math, number utilities, and Object parsing.  
+
+<h2>API Reference</h2>
+
+ This is a list of all the public 
+ assembly. The details have not been written in most cases - feel free to contribute. This is intended as an aid to navigating the documentation and linking code examples together.

@@ -1,0 +1,17 @@
+---
+layout: post
+title: "IsOdd"
+---
+
+# IsOdd
+
+
+
+<h2>Namespace</h2>
+
+ 
+  
+
+<h2>Summary== Determines if an integer is odd  ==Unit Test==[Fact] public void IsOdd_Should_Return_False_For_2_And_4() {     Assert.False(2.IsOdd());     Assert.False(4.IsOdd()); } [Fact] public void IsOdd_Should_Return_True_For_1_And_3() {     Assert.True(1.IsOdd());     Assert.True(3.IsOdd()); }  ==Comments</h2>
+
+ SubSonic 3.0 implements this as an extension method - 2.x uses a static method on SubSonic.Sugar.Numeric.

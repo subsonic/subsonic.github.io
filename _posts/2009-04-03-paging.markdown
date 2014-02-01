@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Paging"
+---
+
+# Paging
+
+SubSonic supports server-side paging using Sql Server 2000, 2005, and MySQL. To use paging, simply make a call to the Paged method inline in the query:[Test] public void Exec_PagedSimple() {  SubSonic.SqlQuery q = Select.AllColumnsFrom<Product>().Paged(1, 20)   .Where("productid").IsLessThan(100);  int records = q.GetRecordCount();  Assert.IsTrue(records 
+
+<h2> 20); }  [Test] public void Exec_PagedJoined() {  SubSonic.SqlQuery q = new Select("ProductId", "ProductName", "CategoryName")   .From("Products").InnerJoin(Category.Schema).Paged(1, 20);  int records = q.GetRecordCount();  Assert.IsTrue(records == 20); }  [Test] public void Exec_PagedView() {  SubSonic.SqlQuery q = new Select().From(Invoice.Schema).Paged(1, 20);  int records = q.GetRecordCount();  Assert.IsTrue(records == 20); }  [Test] public void Exec_PagedViewJoined() {  SubSonic.SqlQuery q = new Select()   .From(Invoice.Schema).Paged(1, 20).InnerJoin(Product.Schema);  int records = q.GetRecordCount();  Assert.IsTrue(records </h2>
+
+ 20); }

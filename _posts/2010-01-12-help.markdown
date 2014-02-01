@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Help"
+---
+
+# Help
+
+This here docs site is a Wiki and works based on help by 
+. We'd love your input and feedback - here's some resources for you:  
+
+<h2>Note== This is a wiki, which is intended to be a resource of information, not a place to ask questions. If you have a question please head over to StackOverflow (click the "Help" link above).  ==Style Guide</h2>
+
+ Please have a read of our 
+, 
+.  
+
+<h2>Linking== Linking your document will help it be discovered - please make sure to read the help doc and link away!  ==Categories== Categories will help us find your page. One category is super-important: New Page. When you create a page for us, please mark it as a New Page (using [[Category:New Page]]) so we can find it!  ==Thank you!</h2>
+
+ Honestly and truly - thank you for your interest in this :)

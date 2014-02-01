@@ -1,0 +1,32 @@
+---
+layout: post
+title: "3.0 Migrations"
+---
+
+# 3.0 Migrations
+
+
+
+<h2>Summary</h2>
+
+ Migrations 
+ as a way to create your database schema using code. It's a very nice way to version your database from your application, keeping track of changes along the way. But, as with most technology, it has it's pros and cons.  
+
+<h2>Pros== Using migrations generally means your database exists to persist your objects, and this can be very freeing in terms of good Object-oriented programming. Migrations keep your model in sync nicely with your database, and generally there are no suprises as long as you understand the convention you're working with.  Moving your application from one database to another becomes exceedingly easy - you can change your connection string, run the migration, and your schema is transferred. This is much more difficult using SQL (although many tools facilitate this kind of thing).  If you adopt the conventions used by Migrations (such as using a primary key property, proper naming of properties and classes that don't clash with reserved words, etc) then you don't need to think about what will work and what won't (database-wise) - all of your columns will be defaulted to proper length and nullability, and you don't need to open up a database designer.  ==Cons== Many developers are uncomfortable without a fully indexed, relationally-modeled database. One question we get constantly is "what about foreign keys?" and the answer, when discussing migrations, is along the lines of "what about them?".  Foreign keys, indexes, triggers, etc are database concerns and many developers like to work with them. To others (who are not as concerned about their database) they are business logic - identifying relationships that should be in code.   Bottom line: if you're a developer that is concerned about database design, migrations might not be for you.  ==Discussion== Most Microsoft programmers have been brought up using databases first, applications second. We've been taught how to optimize SQL Server through clever indexing and proper relational modeling - this is evident based on Microsoft's continued "DB-first" approach to Object-relational mapping, where the DB is king, essentially, of the application.  Other platforms don't see it this way (Rails, PHP, and Python/Django). These platforms use a database as a way to persist object information - nothing more. Rails, for instance, will create a primary key for your migrated tables and nothing else as "it's not needed". If it is needed, then you should rethink what it is you're doing.  For instance - many people want to query their application to know what's going on (user stats, sales, views, etc) - basic reporting needs. In this sense, an application's data store is not necessarily setup to be a reporting database - you should create a reporting database and have your application dump data to it, or have the reporting DB pull data from your app. There is a clear separation of purpose here.  As with all technical issues - it's up to you to focus on what works for your project/organization.   ==SubSonic's Migration Concepts== To run a migration, 3 steps need to happen: *An object needs to be transformed into an ITable (SubSonic's database table representation) *The ITable generates the SQL needed *Synchronization and execution by a Provider  The process uses reflection to load an assembly, and then the type is reflected to generate the ITable. Finally the SQL generated (in a series of SQL commands) is executed within a transaction.  ==Post Migration Example</h2>
+
+ As an example, we'll migrate a class called Post:public class Post{    public Guid ID {get; set;}    public string Title {get; set;}    public string Body{get; set;} }  next, create a new SubSonic.Schema.Migrator, passing in the Assembly that holds that class you want to Migrate:  
+var migrator=new SubSonic.Schema.Migrator(Assembly.GetExecutingAssembly());  The Migrator will migrate a Type for you, and will determine what to sync to the database using a passed-in provider. The return will be a string[] of SQL statements based on the provider you're using (SQL Server, MySQL, SQLite, etc):  
+var migrator=new SubSonic.Schema.Migrator(Assembly.GetExecutingAssembly()); var provider=ProviderFactory.GetProvider("Northwind"); string[] commands=migrator.MigrateFromModel<Post>(provider);  You can take this string of SQL statements and execute them as you like, or you can use SubSonic's 
+ tool to execute them all at once:  
+var migrator=new SubSonic.Schema.Migrator(Assembly.GetExecutingAssembly()); var provider=ProviderFactory.GetProvider("Northwind"); string[] commands=migrator.MigrateFromModel<Post>(provider);  BatchQuery query = new BatchQuery(provider); foreach(var s in commands)     query.QueueForTransaction(new QueryCommand(s.Trim(), provider));  //pop the transaction query.ExecuteTransaction();  
+
+<h2>Executing a Migration in One Line</h2>
+
+ That's a lot to go through for a single Migration, and reading through the code you can see that the SubSonic Provider is passed along to to each method - making it a common element. Therefore we should be able to have the Provider do it all for you - and indeed it can (using a transactional statement):  
+ProviderFactory.GetProvider("Northwind").MigrateToDatabase<Post>(Assembly.GetExecutingAssembly);  
+
+<h2>Executing a Migration in Zero Lines (Automatically)</h2>
+
+ If you're 
+, then you can simply turn on the option to run migrations when you save or get data - and the object you're working with will be Migrated automatically. See the 
+ for more information.

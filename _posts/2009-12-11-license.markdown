@@ -1,0 +1,12 @@
+---
+layout: post
+title: "License"
+---
+
+# License
+
+##[Licensing]()
+
+ SubSonic is covered under 
+, with the entire Linq subsection covered under 
+
